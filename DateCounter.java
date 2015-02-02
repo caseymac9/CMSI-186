@@ -1,7 +1,7 @@
 public class DateCounter{
 	public static void main(String args[]){
         try{
-            System.out.println("First Test.");
+            System.out.println("Second Test.");
         } catch (ArrayIndexOutOfBoundsException e){
             System.out.println("Usage: java DateCounter <year0> <month0> <day0> <year1> <month1> <day1>");
         } catch (IllegalArgumentException e2){
@@ -9,7 +9,19 @@ public class DateCounter{
         }
 	}
 	public static boolean isLeapYear (int year){
-        return true;
+        if(year % 4 == 0){
+            if(year % 100 == 0){
+                return true;
+            } else {
+                if(year % 400 == 0){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        } else {
+            return false;
+        }
 	}
 	public static int daysInMonth (int month){
         /*if (month = 2){
